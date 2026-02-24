@@ -1399,9 +1399,6 @@ h3 {
   .contact-links .btn {
     min-width: 280px;
   }
-}
-
-@media (max-width: 1180px) {
   .hero-content h1 {
     font-size: 75px;
   }
