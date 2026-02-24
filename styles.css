@@ -30,11 +30,6 @@
   padding: 0;
 }
 
-html,
-body {
-  overflow-x: clip;
-}
-
 img,
 picture,
 video,
@@ -81,7 +76,6 @@ body {
   font-family: var(--font-body);
   background: #fff;
   color: var(--dark);
-  overflow-x: hidden;
   font-size: 20px;
   scroll-behavior: smooth;
 }
@@ -117,7 +111,6 @@ body {
   font-size: 50px;
   line-height: 1.5;
   position: relative;
-  z-index: 100;
   color: var(--dark);
   font-weight: 600;
 }
@@ -404,22 +397,21 @@ body {
   .nav {
     position: absolute;
     top: 123px;
-    right: -100%;
+    height: calc(100vh - 123px);
+    left: 0;
     width: 100%;
-    height: 100vh;
     background: #eee;
+    opacity: 0;
+    transition: transform 0.4s ease;
+
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transition: 0.4s;
-  }
-
-  .nav-list {
-    margin-top: -140px;
+    z-index: 10;
   }
 
   .nav.active {
-    right: 0;
+    opacity: 1;
   }
 
   .nav-list {
@@ -1499,8 +1491,5 @@ h3 {
   }
   .contact .title {
     font-size: 40px;
-  }
-  .header {
-    overflow-x: hidden;
   }
 }
